@@ -16,13 +16,13 @@ const index = () => {
           <div
             className={styles.content}
           >
-            <h2>Hello! I'm Sujeet Kumar</h2>
+            <h2>{`Hello! I'm Vikas Yadav`}</h2>
             <h1>MERN Stack Developer</h1>
             <p>Building the web with passion and precision.</p>
             <div className={styles.buttons}>
               <Link href="#">
                 <div className={styles.button}>
-                  <span>Let's talk</span>
+                  <span>{`Let's talk`}</span>
                   <ArrowIcon />
                 </div>
               </Link>

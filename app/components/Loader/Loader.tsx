@@ -11,7 +11,7 @@ export default function Check() {
     <motion.div
       exit={{ y: "-100vh", transition: { duration: 1 }}}
       className={styles.loaderBox}>
-      <h2 className={styles.text}>Sujeet Kumar</h2>
+      <h2 className={styles.text}>Vikas Yadav</h2>
       <p>Loading...</p>
     </motion.div>
   );

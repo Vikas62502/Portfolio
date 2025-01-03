@@ -9,7 +9,7 @@ const index = () => {
       <div className={styles.sectionHead}>
         <h3>Contact</h3>
         <p>
-          Let's work together!
+          {`Let's work together!`}
         </p>
       </div>
       <div className={styles.contactBox}>

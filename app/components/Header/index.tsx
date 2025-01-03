@@ -18,19 +18,19 @@ const variants = {
     height: 650,
     top: -15,
     right: -15,
-    transition: { 
-      duration: 0.25, 
+    transition: {
+      duration: 0.25,
       ease: [0.76, 0, 0.24, 1]
     }
   },
-  
+
   closed: {
     width: 100,
     height: 40,
     top: 0,
     right: 0,
-    transition: { 
-      duration: 0.25, 
+    transition: {
+      duration: 0.25,
       delay: 0.25,
       ease: [0.76, 0, 0.24, 1]
     }
@@ -40,20 +40,20 @@ const variants = {
 const index = () => {
   const [isActive, setIsActive] = useState<boolean>(false);
   const [scrollyValue, setScrollyValue] = useState<number>(0);
-  const {scrollY } = useScroll();
-  
+  const { scrollY } = useScroll();
+
   useMotionValueEvent(scrollY, "change", (latest) => {
     setScrollyValue(latest);
   })
-  
+
 
   return (
-    <motion.div 
-      className={styles.header} 
+    <motion.div
+      className={styles.header}
       style={scrollyValue > 100 ? navBg : {}}
     >
       <Link href="#hero">
-        <span>SUJEET KUMAR</span>
+        <span>VIKAS YADAV</span>
       </Link>
       <div className={styles.menuOption}>
         <motion.div

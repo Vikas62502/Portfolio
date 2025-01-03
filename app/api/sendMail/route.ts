@@ -1,9 +1,8 @@
 import transporter from "@/lib/transporter";
-import {NextRequest, NextResponse} from "next/server";
+import { NextRequest, NextResponse } from "next/server";
 
-export async function POST(req: NextRequest){
+export async function POST(req: NextRequest) {
   const { name, email, subject, message } = await req.json();
-  // console.log({ name, email, subject, message });
   const myEmail = process.env.MY_EMAIL;
 
   try {
@@ -23,7 +22,7 @@ export async function POST(req: NextRequest){
       </html>
       `,
     };
-  
+
     // send email
     await transporter.sendMail(mailOptions);
     return NextResponse.json({ message: "Email sent" }, { status: 200 });

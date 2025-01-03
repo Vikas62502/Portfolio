@@ -1,10 +1,13 @@
 "use client";
 
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import styles from "./contact.module.css";
-import axios from "axios";
+import axios, { isCancel } from "axios";
+import SuccessModal from "../../SuccessModal";
 
 const ContactForm = () => {
+  const [loading, setLoading] = useState<boolean>(false)
+  const [isSuccess, setIsSuccess] = useState<boolean>(false)
   const nameRef = useRef<HTMLInputElement>(null);
   const emailRef = useRef<HTMLInputElement>(null);
   const subjectRef = useRef<HTMLInputElement>(null);
@@ -24,37 +27,38 @@ const ContactForm = () => {
       alert("Please fill in all fields");
       return;
     }
+    setLoading(true)
 
     try {
       const url = "/api/sendMail";
       const body = formData;
-      
-      // send data to the server
-      // console.log("formData: ", formData);
-
       const response = await axios.post(url, body, {
         headers: {
           "Content-Type": "application/json",
         }
       })
-
+      setIsSuccess(true)
       console.log("response: ", response);
       if (response.status === 200) {
         alert("Email sent");
       }
     } catch (error) {
       console.log("error: ", error);
+
     } finally {
       // Clear the form
       nameRef.current!.value = "";
       emailRef.current!.value = "";
       subjectRef.current!.value = "";
       messageRef.current!.value = "";
+      setLoading(false)
     }
   };
 
+
+
   return (
-    <div className={styles.formBox}>
+    <div className={styles.formBox} >
       <form onSubmit={handleSubmit}>
         <div className={styles.nameEmail}>
           <input ref={nameRef} type="text" placeholder="Full name" className={styles.input} />
@@ -64,9 +68,13 @@ const ContactForm = () => {
         <div>
           <textarea ref={messageRef} placeholder="Message" rows={3} className={styles.input} ></textarea>
         </div>
-        <button type="submit" className={styles.submitButton}>Send</button>
+        <button type="submit" className={styles.submitButton}>{loading ? "Please wait ..." : "Send"}</button>
       </form>
-    </div>
+      <div >
+        <SuccessModal isOpen={isSuccess} onClose={() => setIsSuccess(false)} />
+      </div>
+
+    </div >
   );
 };
 

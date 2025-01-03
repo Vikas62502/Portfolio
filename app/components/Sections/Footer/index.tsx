@@ -2,7 +2,7 @@ import styles from "./footer.module.css";
 
 const index = () => {
   const year = new Date().getFullYear();
-  const author = "Sujeet Kumar";
+  const author = "Vikas Yadav";
   return (
     <div className={styles.footerBox}>
       <p>© {year}. {author}</p>

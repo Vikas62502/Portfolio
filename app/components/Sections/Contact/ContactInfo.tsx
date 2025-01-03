@@ -3,11 +3,11 @@ import Link from "next/link";
 
 const ContactInfo = () => {
   const contactInfo = {
-    email: "sujeetkumar.official798@gmail.com",
-    phone: "+91 7982422191",
-    address: "New Delhi, Delhi, India",
-    linkedin: "https://www.linkedin.com/in/sujeetyt/",
-    gitHub: "https://github.com/SujeetYT/",
+    email: "vikasyadav62502@gmail.com",
+    phone: "+918178624530",
+    address: "Faridabad, Haryana, India",
+    linkedin: "https://www.linkedin.com/in/vikasyadav62/",
+    gitHub: "https://github.com/Vikas62502",
   }
 
   return (
@@ -15,8 +15,8 @@ const ContactInfo = () => {
       <div className={styles.infoBox}>
         <div className={styles.contactHeader}>
           <h2>Get in touch</h2>
-          <p>{contactInfo.email}</p>
-          <p>{contactInfo.phone}</p>
+          <a href={`mailto:${contactInfo.email}`}>{contactInfo.email}</a>
+          <a href={`tel:${contactInfo.phone}`}>{contactInfo.phone}</a>
           <p>{contactInfo.address}</p>
         </div>
         <div className={styles.contactFooter}>
