@@ -1,11 +1,12 @@
 export const experienceData = [
   {
     "id": 1,
-    "title": "Software Engineer Intern",
-    "company": "Sutraa Techno Pvt. Ltd.",
-    "location": "Noida, Uttar Pradesh, India",
-    "startDate": "2024-04-22",
-    "endDate": "2024-10-10",
+    "title": "Full Stack Developer",
+    "company": "Chairbord Pvt. Ltd.",
+    "link": "https://chairbord.in/",
+    "location": "Jaipur, Rajesthan, India",
+    "startDate": "April 2024",
+    "endDate": "Current",
     "description": [
       "Conducted thorough functionality testing on the UAT server to ensure application stability.",
       "Monitored API performance and resolved issues using Grafana and New Relic to address API breakages and Stuck Transaction Reports.",
@@ -18,11 +19,12 @@ export const experienceData = [
   },
   {
     "id": 2,
-    "title": "Full Stack Developer Intern",
+    "title": "Full Stack Web3 Developer",
     "company": "Cadillacs",
+    "link": "https://cadillacs.in/",
     "location": "Faridabad, Haryana, India",
-    "startDate": "2023-08-09",
-    "endDate": "2023-11-1",
+    "startDate": "September 2023",
+    "endDate": "April 2024",
     "description": [
       "Enhanced UI by refactoring from Tailwind CSS to React Bootstrap and improved load times with lazy loading and managed state using Context API.",
       "Developed secure API endpoints with Express and Firebase-Admin by enabling user authentication with Firebase-tokens.",
@@ -33,11 +35,12 @@ export const experienceData = [
   },
   {
     "id": 3,
-    "title": "Software Developer Intern",
-    "company": "Tizon",
-    "location": "New Delhi, Delhi, India",
-    "startDate": "2022-08-14",
-    "endDate": "2022-10-14",
+    "title": "Web3 Developer Intern",
+    "company": "Cadillacs",
+    "link": "https://cadillacs.in/",
+    "location": "Faridabad, Haryana, India",
+    "startDate": "June 2023",
+    "endDate": "September 2023",
     "description": [
       "Developed a visually appealing user interface using React, Bootstrap and Vanilla CSS.",
       "Used MongoDB, ExpressJS, ReactJS, and NodeJS for seamless integration and functionality.",

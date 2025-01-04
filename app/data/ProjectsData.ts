@@ -8,7 +8,7 @@ export interface Image {
 export interface ProjectType {
   id: number;
   title: string;
-  description: string; // should be 200 characters or less
+  description: string;
   tags: string[];
   images: Image[];
   liveLink: string;

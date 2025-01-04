@@ -18,7 +18,7 @@ const Service: FC<ExperienceDetailsProps> = ({ key, heading, subHeading }) => {
           <p>{subHeading}</p>
         </div>
         <div className={styles.contact}>
-          <span>Let's Discuss</span>
+          <span>{"Let's Discuss"}</span>
         </div>
       </div>
     </Link>

@@ -1,6 +1,7 @@
 "use client";
 
-import { FC, useEffect } from "react";
+import { FC } from "react";
+import Link from "next/link";
 import styles from "@/app/components/Sections/Experience/experience.module.css";
 
 interface ExperienceDetailsProps {
@@ -11,42 +12,48 @@ interface ExperienceDetailsProps {
   startDate: string;
   endDate: string;
   description: string[];
+  link: string;
 }
 
-const formatDate = (date:string) => date === "Present" ? date : date.split("-").reverse().slice(1).join("-");
-
-const ExperienceDetails:FC<ExperienceDetailsProps> = ({id, title, company, location, startDate, endDate, description}) => {
-  
-  const formattedStartDate = formatDate(startDate);
-  const formattedEndDate = formatDate(endDate);
-  
+const ExperienceDetails: FC<ExperienceDetailsProps> = ({
+  id,
+  title,
+  company,
+  location,
+  startDate,
+  endDate,
+  description,
+  link,
+}) => {
   return (
-    <div key={id} className={styles.experienceBox}>
-      <div className={styles.detailsBox}>
-        <div className={styles.number}>
-          <span>0{id}</span>
-        </div>
-        <div className={styles.details}>
-          <div className={styles.heading}>
-            <p>{title}</p>
-            <p>{company}</p>
+    <Link href={link} target="_blank" rel="noopener noreferrer">
+      <div key={id} className={`${styles.experienceBox} cursor-pointer`}>
+        <div className={styles.detailsBox}>
+          <div className={styles.number}>
+            <span>0{id}</span>
           </div>
-          <div className={styles.dateLocation}>
-            <p>{formattedStartDate} - {formattedEndDate}</p>
-            <p>{location}</p>
+          <div className={styles.details}>
+            <div className={styles.heading}>
+              <p>{title}</p>
+              <p>{company}</p>
+            </div>
+            <div className={styles.dateLocation}>
+              <p>
+                {startDate} - {endDate}
+              </p>
+              <p>{location}</p>
+            </div>
           </div>
         </div>
-      </div>
-      <div className={styles.description}>
-        <ul className={styles.unOrderedList}>
-          {
-            description.map((desc, index) => (
+        <div className={styles.description}>
+          <ul className={styles.unOrderedList}>
+            {description.map((desc, index) => (
               <li key={index}>{desc}</li>
-            ))
-          }
-        </ul>
+            ))}
+          </ul>
+        </div>
       </div>
-    </div>
+    </Link>
   );
 };
 

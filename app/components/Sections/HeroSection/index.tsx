@@ -20,9 +20,9 @@ const index = () => {
             <h1>MERN Stack Developer</h1>
             <p>Building the web with passion and precision.</p>
             <div className={styles.buttons}>
-              <Link href="#">
+              <Link href="https://github.com/Vikas62502" target="_blank">
                 <div className={styles.button}>
-                  <span>{`Let's talk`}</span>
+                  <span>{`Github`}</span>
                   <ArrowIcon />
                 </div>
               </Link>

@@ -24,7 +24,7 @@ const index = () => {
       </div>
       <div className={styles.contactMobile}>
         <Link href="#contact">
-          <span>Let's Discuss</span>
+          <span>{"Let's Discuss"}</span>
         </Link>
       </div>
     </section>

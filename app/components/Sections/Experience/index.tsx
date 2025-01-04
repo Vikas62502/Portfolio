@@ -4,7 +4,7 @@ import { experienceData } from "@/app/data/ExperienceData";
 
 
 const index = () => {
-  
+
 
 
   return (
@@ -16,7 +16,8 @@ const index = () => {
       </div>
       {
         experienceData.map((data) => (
-          <ExperienceDetails 
+          <ExperienceDetails
+            link={data.link}
             key={data.id}
             id={data.id}
             title={data.title}
